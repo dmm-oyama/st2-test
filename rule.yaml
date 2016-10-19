@@ -1,0 +1,13 @@
+---
+    name: "tmp04"
+    pack: "ohyama"
+    description: "Test rule for using git sensor"
+    enabled: true
+
+    trigger:
+        type: "git.head_sha_monitor"
+
+    action:
+        ref: "core.local"
+        parameters:
+            cmd: "echo \"{{trigger.body}}\" >> /tmp/tmp01.txt"
